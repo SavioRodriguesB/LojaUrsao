@@ -9,17 +9,17 @@ package to;
  *
  * @author savio
  */
-public class usuarioLogado {
+public class UsuarioLogado {
     
     private Integer id;
     private Integer idPessoa;
     private String Login;
     private String Senha;
 
-    public usuarioLogado() {
+    public UsuarioLogado() {
     }
 
-    public usuarioLogado(Integer id, Integer idPessoa, String Login, String Senha) {
+    public UsuarioLogado(Integer id, Integer idPessoa, String Login, String Senha) {
         this.id = id;
         this.idPessoa = idPessoa;
         this.Login = Login;

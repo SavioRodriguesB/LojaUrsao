@@ -6,32 +6,34 @@
 package controller;
 
 import java.util.ArrayList;
-import to.usuarioLogado;
+import to.UsuarioLogado;
 
 /**
  *
  * @author elyra
  */
 public class LoginController {
-
-    public usuarioLogado autenticadorUrsal(String login, String senha){
     
-        ArrayList<usuarioLogado> listaDeUsuariosUrsal = new ArrayList<>();
-        
-        usuarioLogado elyrabelo = new usuarioLogado(1,1,"elyrabelo","123456");
-        usuarioLogado saviorodrigues = new usuarioLogado(2,2,"saviorodrigues","123");
-        listaDeUsuariosUrsal.add(elyrabelo);
-        listaDeUsuariosUrsal.add(saviorodrigues);
+    ArrayList<UsuarioLogado> listaDeUsuariosUrsal = new ArrayList<>();
+
+    public UsuarioLogado autenticadorUrsal(String login, String senha){
+    
+        carregarListaDeUsuariosUrsal();
         
         for(int i=0; i<listaDeUsuariosUrsal.size(); i++){
-            
             if (listaDeUsuariosUrsal.get(i).getLogin().equals(login) && listaDeUsuariosUrsal.get(i).getSenha().equals(senha)){
-                
                 return listaDeUsuariosUrsal.get(i);
             }
-            
         }
         return null;
+    }
+    
+    private void carregarListaDeUsuariosUrsal(){
+        
+        UsuarioLogado elyrabelo = new UsuarioLogado(1,1,"elyrabelo","123456");
+        UsuarioLogado saviorodrigues = new UsuarioLogado(2,2,"saviorodrigues","123");
+        listaDeUsuariosUrsal.add(elyrabelo);
+        listaDeUsuariosUrsal.add(saviorodrigues);
     }
     
 }

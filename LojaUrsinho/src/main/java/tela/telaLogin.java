@@ -6,8 +6,9 @@
 package tela;
 
 import controller.LoginController;
+import java.sql.Connection;
 import javax.swing.JOptionPane;
-import to.usuarioLogado;
+import to.UsuarioLogado;
 
 /**
  *
@@ -109,9 +110,13 @@ public class telaLogin extends javax.swing.JFrame {
     String login = txtLogin.getText();
     String senha = txtSenha.getText();
     LoginController loginController = new LoginController();
-    usuarioLogado usuario = loginController.autenticadorUrsal(login, senha);
+    UsuarioLogado usuario = loginController.autenticadorUrsal(login, senha);
     if (usuario == null){
         JOptionPane.showMessageDialog(null, "Usuário não existe","Erro", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Testando a Conexão.");
+        
+        Connection con = new jdbc.ConnectionFactory().conecta();
+        JOptionPane.showMessageDialog(null, "Conexão realizada com sucesso.");
     }else {
         JOptionPane.showMessageDialog(null, "Usuário" + usuario.getId() +" encontrado","Login Aprovado", JOptionPane.INFORMATION_MESSAGE);
     }
