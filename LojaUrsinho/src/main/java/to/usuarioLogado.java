@@ -11,11 +11,23 @@ package to;
  */
 public class usuarioLogado {
     
-    Integer id;
-    Integer idUsuario;
-    String Login;
-    String Senha;
+    private Integer id;
+    private Integer idPessoa;
+    private String Login;
+    private String Senha;
 
+    public usuarioLogado() {
+    }
+
+    public usuarioLogado(Integer id, Integer idPessoa, String Login, String Senha) {
+        this.id = id;
+        this.idPessoa = idPessoa;
+        this.Login = Login;
+        this.Senha = Senha;
+    }
+
+    
+    
     public Integer getId() {
         return id;
     }
@@ -24,12 +36,12 @@ public class usuarioLogado {
         this.id = id;
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
+    public Integer getIdPessoa() {
+        return idPessoa;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdPessoa(Integer idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
     public String getLogin() {
